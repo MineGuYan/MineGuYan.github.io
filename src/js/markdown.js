@@ -78,6 +78,13 @@ const MarkdownParser = {
             return savePlaceholder(`<pre><code class="language-${lang}">${highlighted}</code></pre>`);
         });
         
+        html = html.replace(/~~~(\S*)\n([\s\S]*?)~~~/g, (match, lang, code) => {
+            lang = this.languageMap[lang] || lang || 'plaintext';
+            const escapedCode = this.escapeHtml(code.trim());
+            const highlighted = this.highlightCode(escapedCode, lang);
+            return savePlaceholder(`<pre><code class="language-${lang}">${highlighted}</code></pre>`);
+        });
+        
         html = html.replace(/^( {4}|\t)([\s\S]*?)(?=\n[^\s]|\n$|$)/gm, (match, indent, code) => {
             const escapedCode = this.escapeHtml(code.trim());
             return savePlaceholder(`<pre><code>${escapedCode}</code></pre>`);
@@ -166,6 +173,16 @@ const MarkdownParser = {
             return `${placeholder}${index}%%`;
         };
         
+        code = code.replace(/(\/\/.*$)/gm, (match) => {
+            return savePlaceholder(`<span class="hljs-comment">${match}</span>`);
+        });
+        code = code.replace(/(#.*$)/gm, (match) => {
+            return savePlaceholder(`<span class="hljs-comment">${match}</span>`);
+        });
+        code = code.replace(/(\/\*[\s\S]*?\*\/)/g, (match) => {
+            return savePlaceholder(`<span class="hljs-comment">${match}</span>`);
+        });
+        
         code = code.replace(/(&quot;|&#039;|`)(?:(?!\1)[^]|&[^;]+;)*?\1/g, (match) => {
             return savePlaceholder(`<span class="hljs-string">${match}</span>`);
         });
@@ -181,16 +198,6 @@ const MarkdownParser = {
             });
         }
         
-        code = code.replace(/(\/\/.*$)/gm, (match) => {
-            return savePlaceholder(`<span class="hljs-comment">${match}</span>`);
-        });
-        code = code.replace(/(#.*$)/gm, (match) => {
-            return savePlaceholder(`<span class="hljs-comment">${match}</span>`);
-        });
-        code = code.replace(/(\/\*[\s\S]*?\*\/)/g, (match) => {
-            return savePlaceholder(`<span class="hljs-comment">${match}</span>`);
-        });
-        
         code = code.replace(/\b([a-zA-Z_]\w*)\s*(?=\()/g, (match, name) => {
             return savePlaceholder(`<span class="hljs-function">${name}</span>`);
         });
@@ -203,11 +210,21 @@ const MarkdownParser = {
     },
 
     parseHeaders(text) {
+        const idCounts = {};
+        
         const generateId = (headerText) => {
             let cleanText = headerText.replace(/`([^`]+)`/g, '$1');
-            return cleanText.toLowerCase()
+            let baseId = cleanText.toLowerCase()
                 .replace(/[^\w\u4e00-\u9fa5]+/g, '-')
                 .replace(/^-+|-+$/g, '');
+            
+            if (idCounts[baseId] !== undefined) {
+                idCounts[baseId]++;
+                return baseId + '-' + idCounts[baseId];
+            } else {
+                idCounts[baseId] = 0;
+                return baseId;
+            }
         };
         
         return text
@@ -342,21 +359,30 @@ const MarkdownParser = {
     extractToc(markdown) {
         const toc = [];
         const headerRegex = /^(#{1,6})\s+(.+)$/gm;
+        const idCounts = {};
         let match;
         
         while ((match = headerRegex.exec(markdown)) !== null) {
             const level = match[1].length;
             let text = match[2].trim();
             
-            text = text.replace(/`([^`]+)`/g, '$1');
-            
-            const id = text.toLowerCase()
+            let cleanText = text.replace(/`([^`]+)`/g, '$1');
+            let baseId = cleanText.toLowerCase()
                 .replace(/[^\w\u4e00-\u9fa5]+/g, '-')
                 .replace(/^-+|-+$/g, '');
             
+            let id;
+            if (idCounts[baseId] !== undefined) {
+                idCounts[baseId]++;
+                id = baseId + '-' + idCounts[baseId];
+            } else {
+                idCounts[baseId] = 0;
+                id = baseId;
+            }
+            
             toc.push({
                 level,
-                text,
+                text: cleanText,
                 id
             });
         }
