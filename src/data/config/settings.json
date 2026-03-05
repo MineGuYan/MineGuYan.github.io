@@ -1,0 +1,10 @@
+{
+    "defaultTheme": "dark",
+    "storageKeys": {
+        "theme": "blog-theme"
+    },
+    "scroll": {
+        "navbarOffset": 50,
+        "tocOffset": 100
+    }
+}

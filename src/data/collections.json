@@ -1,0 +1,20 @@
+[
+    {
+        "id": "C++",
+        "title": "C++基础系列",
+        "description": "从零开始学习C++，包括类、对象、继承、多态、模板、标准库等。",
+        "cover": "src/assets/images/collections/c++.png",
+        "articles": []
+    },
+    {
+        "id": "javascript-basics",
+        "title": "JavaScript基础系列",
+        "description": "从零开始学习JavaScript，涵盖基础语法、数据类型、函数、DOM操作等核心知识点。",
+        "cover": "src/assets/images/collections/javascript.png",
+        "articles": [
+            "getting-started-with-javascript", 
+            "css-flexbox-guide", 
+            "life-balance"
+        ]
+    }
+]

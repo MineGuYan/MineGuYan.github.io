@@ -1,0 +1,99 @@
+{
+  "articles": [
+    {
+      "id": "pop-and-oop",
+      "title": "面向过程编程与面向对象编程",
+      "date": "2026-03-05",
+      "category": "study",
+      "tags": ["C++", "编程", "笔记"],
+      "excerpt": "介绍了面向过程编程和面向对象编程的区别、联系和应用场景。",
+      "file": "pop-and-oop.md"
+    },
+    {
+      "id": "nankai-course-selectionutorial",
+      "title": "南开大学选课教程",
+      "date": "2025-08-25",
+      "category": "nankai",
+      "tags": ["南开大学", "选课"],
+      "excerpt": "南开大学的选课教程，包括选课步骤、注意事项、系统操作等。",
+      "file": "nankai-course-selectionutorial.md"
+    },
+    {
+      "id": "getting-started-with-javascript",
+      "title": "JavaScript 入门指南",
+      "date": "2024-03-15",
+      "category": "tech",
+      "tags": ["JavaScript", "前端", "编程入门"],
+      "excerpt": "本文将带你了解JavaScript的基础知识，包括变量声明、数据类型、函数定义等核心概念，适合初学者快速入门。",
+      "file": "getting-started-with-javascript.md",
+      "collections": ["javascript-basics"]
+    },
+    {
+      "id": "css-flexbox-guide",
+      "title": "CSS Flexbox 布局完全指南",
+      "date": "2024-03-10",
+      "category": "tech",
+      "tags": ["CSS", "Flexbox", "布局"],
+      "excerpt": "Flexbox是现代CSS布局的核心技术之一，本文详细介绍Flexbox的各个属性及其应用场景，帮助你掌握弹性布局。",
+      "file": "css-flexbox-guide.md",
+      "collections": ["javascript-basics"]
+    },
+    {
+      "id": "reading-clean-code",
+      "title": "《代码整洁之道》读书笔记",
+      "date": "2024-03-05",
+      "category": "reading",
+      "tags": ["读书笔记", "代码质量", "软件工程"],
+      "excerpt": "《代码整洁之道》是每个程序员都应该阅读的经典书籍，本文分享我的阅读心得和关键收获。",
+      "file": "reading-clean-code.md"
+    },
+    {
+      "id": "life-balance",
+      "title": "程序员如何保持工作与生活的平衡",
+      "date": "2024-02-28",
+      "category": "life",
+      "tags": ["生活", "工作", "效率"],
+      "excerpt": "作为程序员，我们经常面临工作压力和生活平衡的挑战。本文分享一些实用的方法和心得体会。",
+      "file": "life-balance.md",
+      "collections": ["javascript-basics"]
+    },
+    {
+      "id": "vue3-composition-api",
+      "title": "Vue 3 Composition API 实战教程",
+      "date": "2024-02-20",
+      "category": "tutorial",
+      "tags": ["Vue", "前端框架", "教程"],
+      "excerpt": "Vue 3的Composition API带来了全新的组件逻辑组织方式，本文通过实例讲解如何使用Composition API开发复杂应用。",
+      "file": "vue3-composition-api.md",
+      "collections": ["vue-learning"]
+    },
+    {
+      "id": "git-advanced-tips",
+      "title": "Git 高级技巧与最佳实践",
+      "date": "2024-02-15",
+      "category": "tech",
+      "tags": ["Git", "版本控制", "开发工具"],
+      "excerpt": "掌握Git的高级用法可以大大提高开发效率，本文介绍一些实用的Git技巧和团队协作最佳实践。",
+      "file": "git-advanced-tips.md"
+    },
+    {
+      "id": "reading-design-patterns",
+      "title": "《设计模式》读书笔记：创建型模式",
+      "date": "2024-02-10",
+      "category": "reading",
+      "tags": ["读书笔记", "设计模式", "软件架构"],
+      "excerpt": "设计模式是软件开发中的重要知识，本文总结《设计模式》一书中的创建型模式，包括单例、工厂、建造者等模式。",
+      "file": "reading-design-patterns.md"
+    },
+    {
+      "id": "responsive-design-guide",
+      "title": "响应式Web设计完整指南",
+      "date": "2024-01-25",
+      "category": "tutorial",
+      "tags": ["CSS", "响应式设计", "前端"],
+      "excerpt": "响应式设计是现代Web开发的必备技能，本文全面介绍响应式设计的原理、技术和最佳实践。",
+      "file": "responsive-design-guide.md",
+      "collections": ["css-advanced"]
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+    "postsPerPage": 5,
+    "showPagination": true,
+    "maxPaginationButtons": 5
+}

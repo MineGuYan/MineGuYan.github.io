@@ -1,0 +1,304 @@
+/* ========================================
+   Code Highlighting Styles
+   ======================================== */
+
+/* Light Theme Code Colors */
+:root {
+    --code-color-comment: #6a737d;
+    --code-color-keyword: #d73a49;
+    --code-color-string: #032f62;
+    --code-color-number: #005cc5;
+    --code-color-function: #6f42c1;
+    --code-color-variable: #e36209;
+    --code-color-operator: #d73a49;
+    --code-color-punctuation: #24292e;
+    --code-color-class: #6f42c1;
+    --code-color-property: #005cc5;
+    --code-color-decorator: #6f42c1;
+    --code-color-builtin: #005cc5;
+}
+
+/* Dark Theme Code Colors */
+[data-theme="dark"] {
+    --code-color-comment: #8b949e;
+    --code-color-keyword: #ff7b72;
+    --code-color-string: #a5d6ff;
+    --code-color-number: #79c0ff;
+    --code-color-function: #d2a8ff;
+    --code-color-variable: #ffa657;
+    --code-color-operator: #ff7b72;
+    --code-color-punctuation: #c9d1d9;
+    --code-color-class: #7ee787;
+    --code-color-property: #79c0ff;
+    --code-color-decorator: #d2a8ff;
+    --code-color-builtin: #79c0ff;
+}
+
+/* Code Block Styles */
+.article-body pre {
+    position: relative;
+}
+
+.article-body pre code {
+    display: block;
+    padding: var(--spacing-lg);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Inline Code */
+.article-body code:not(pre code) {
+    color: var(--code-color-keyword);
+    background-color: var(--color-bg-code);
+    padding: 2px 6px;
+    border-radius: var(--radius-sm);
+    font-size: 0.9em;
+}
+
+/* Syntax Highlighting Classes */
+.hljs-comment,
+.hljs-quote {
+    color: var(--code-color-comment);
+    font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-section,
+.hljs-link {
+    color: var(--code-color-keyword);
+    font-weight: 500;
+}
+
+.hljs-string,
+.hljs-title,
+.hljs-name,
+.hljs-type,
+.hljs-attribute,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition,
+.hljs-variable,
+.hljs-template-tag,
+.hljs-template-variable {
+    color: var(--code-color-string);
+}
+
+.hljs-number,
+.hljs-deletion {
+    color: var(--code-color-number);
+}
+
+.hljs-function,
+.hljs-built_in,
+.hljs-params {
+    color: var(--code-color-function);
+}
+
+.hljs-class .hljs-title,
+.hljs-title.class_ {
+    color: var(--code-color-class);
+}
+
+.hljs-property,
+.hljs-attr {
+    color: var(--code-color-property);
+}
+
+.hljs-meta,
+.hljs-meta .hljs-keyword {
+    color: var(--code-color-comment);
+}
+
+.hljs-operator,
+.hljs-punctuation {
+    color: var(--code-color-punctuation);
+}
+
+.hljs-decorator,
+.hljs-annotation {
+    color: var(--code-color-decorator);
+}
+
+/* Language Specific Styles */
+
+/* JavaScript / TypeScript */
+.language-javascript .hljs-keyword,
+.language-typescript .hljs-keyword {
+    color: var(--code-color-keyword);
+}
+
+.language-javascript .hljs-function,
+.language-typescript .hljs-function {
+    color: var(--code-color-function);
+}
+
+/* Python */
+.language-python .hljs-decorator {
+    color: var(--code-color-decorator);
+}
+
+.language-python .hljs-builtin {
+    color: var(--code-color-builtin);
+}
+
+/* CSS */
+.language-css .hljs-property {
+    color: var(--code-color-property);
+}
+
+.language-css .hljs-value {
+    color: var(--code-color-string);
+}
+
+/* HTML */
+.language-html .hljs-tag {
+    color: var(--code-color-punctuation);
+}
+
+.language-html .hljs-name {
+    color: var(--code-color-keyword);
+}
+
+.language-html .hljs-attr {
+    color: var(--code-color-property);
+}
+
+.language-html .hljs-string {
+    color: var(--code-color-string);
+}
+
+/* JSON */
+.language-json .hljs-attr {
+    color: var(--code-color-property);
+}
+
+.language-json .hljs-string {
+    color: var(--code-color-string);
+}
+
+.language-json .hljs-number {
+    color: var(--code-color-number);
+}
+
+/* Bash / Shell */
+.language-bash .hljs-built_in {
+    color: var(--code-color-builtin);
+}
+
+/* Markdown */
+.language-markdown .hljs-header {
+    color: var(--code-color-keyword);
+    font-weight: 700;
+}
+
+.language-markdown .hljs-link {
+    color: var(--code-color-string);
+}
+
+.language-markdown .hljs-code {
+    color: var(--code-color-function);
+}
+
+/* Code Block Header */
+.code-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-sm) var(--spacing-md);
+    background-color: var(--color-bg-tertiary);
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+}
+
+.code-lang {
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: var(--font-size-xs);
+}
+
+.code-copy {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background-color: var(--color-bg-secondary);
+    border-radius: var(--radius-sm);
+    color: var(--color-text-tertiary);
+    transition: all var(--transition-fast);
+}
+
+.code-copy:hover {
+    background-color: var(--color-accent);
+    color: white;
+}
+
+/* Code Block with Header */
+pre.has-header {
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
+    margin-top: 0;
+}
+
+/* Line Numbers */
+.hljs-ln-numbers {
+    text-align: right;
+    color: var(--color-text-muted);
+    border-right: 1px solid var(--color-border-light);
+    vertical-align: top;
+    padding-right: var(--spacing-md);
+    margin-right: var(--spacing-md);
+    user-select: none;
+}
+
+.hljs-ln-code {
+    padding-left: var(--spacing-md);
+}
+
+/* Diff Highlighting */
+.hljs-addition {
+    background-color: rgba(40, 167, 69, 0.15);
+    display: inline-block;
+    width: 100%;
+}
+
+.hljs-deletion {
+    background-color: rgba(220, 53, 69, 0.15);
+    display: inline-block;
+    width: 100%;
+}
+
+/* Selection */
+.hljs::selection,
+.hljs ::selection {
+    background-color: var(--color-accent-light);
+}
+
+/* Scrollbar Styling for Code Blocks */
+.article-body pre::-webkit-scrollbar {
+    height: 8px;
+}
+
+.article-body pre::-webkit-scrollbar-track {
+    background: var(--color-bg-tertiary);
+    border-radius: var(--radius-sm);
+}
+
+.article-body pre::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: var(--radius-sm);
+}
+
+.article-body pre::-webkit-scrollbar-thumb:hover {
+    background: var(--color-text-muted);
+}
+
+/* Print Styles */
+@media print {
+    .article-body pre {
+        white-space: pre-wrap;
+        word-wrap: break-word;
+    }
+    
+    .article-body code {
+        background-color: #f5f5f5;
+    }
+}

@@ -1,0 +1,33 @@
+{
+    "name": "孤渊雪",
+    "avatar": "src/assets/images/Avatar.png",
+    "bio": "一名热爱技术的开发者，喜欢探索新技术，分享学习心得。",
+    "social": {
+        "github": "https://github.com/MineGuYan",
+        "bilibili": "https://space.bilibili.com/425549250"
+    },
+    "socialLabels": {
+        "github": "GitHub",
+        "email": "邮箱",
+        "twitter": "Twitter",
+        "weibo": "微博",
+        "zhihu": "知乎",
+        "website": "网站",
+        "bilibili": "B站"
+    },
+    "skills": {
+        "frontend": ["HTML5", "CSS3", "JavaScript", "TypeScript", "Vue"],
+        "backend": ["C/C++", "Java", "Python", "Node.js", "Rust"],
+        "tools": ["Git", "VS Code", "Docker", "VS", "JetBrains全家桶"],
+        "database": ["MySQL", "PostgreSQL"]
+    },
+    "skillLabels": {
+        "frontend": "前端",
+        "backend": "后端",
+        "tools": "工具",
+        "database": "数据库",
+        "devops": "运维",
+        "mobile": "移动端",
+        "other": "其他"
+    }
+}
